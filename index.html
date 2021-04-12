@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Notes App</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.1.1/marked.min.js"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <button class="add" id="add">
+            <i class="fas fa-plus"></i> Add note
+        </button>
+
+        <h2>NOTES</h2>
+        <section class="notes" id="notes">
+       
+            <!-- <div class="note">
+                <div class="tools">
+                    <h2 class= "NoteHead">Header Text</h2>
+                    <div class= "noteBtn">
+                        <button class="edit"><i class="fas fa-edit"></i></button>
+                        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div> -->
+                <!-- <div class="tags">
+                    <a href="#">topic1</a>
+                    <a href="#">topic2</a>
+                    <a href="#">topic3</a>
+                </div> -->
+                <!-- <div class="main" ></div> -->
+                <!-- <textarea ></textarea> -->
+            <!-- </div> -->
+
+        
+       
+
+        </section>
+        
+        <h1>Todos</h1>
+        <section class="todos-section">
+            
+            <form id="form">
+                <input
+                    type="text"
+                    id="input"
+                    class="input"
+                    placeholder="Enter your todo"
+                    autocomplete="off"
+                />
+                
+            </form>
+            <div class="separator" ></div>
+                <ul class="todos" id="todos">
+                    <!-- ADD buttons to each Li -->
+                </ul>
+        
+
+        </section>
+
+        <section class="completedSection">
+            <h1>Completed</h1>
+            <ul class="todos-comp" id = "todos-comp"></ul>
+        </section>
+
+    </body>
+</html>

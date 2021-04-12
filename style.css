@@ -1,0 +1,313 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #7bdaf3; */
+    /* font-family: "Poppins", sans-serif; */
+    /* background-color: #17141d; */
+    background-color: teal;
+    color: #f8f8f8;
+    font-family: 'DM Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 3rem;
+}
+.notes {
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 1rem;
+    /* overflow-x: scroll; */
+}
+
+
+.note {
+    height: 500px;
+    width: 400px;
+    min-width: 250px;
+    padding: 0.25rem;
+    border-radius: 16px;
+    background: #17141d;
+    /* background: #888888; */
+    /* box-shadow: -1rem 0 3rem #000; */
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+    margin: 0;
+    scroll-snap-align: start;
+    clear: both;
+    position: relative;
+}
+
+.note:focus-within~.note, .note:hover~.note{
+    transform: translateX(130px);
+}
+
+
+ .note:hover{
+    box-shadow: -1rem 0 1rem #000;
+    transform: translateY(-1rem);
+ }
+
+ .note:not(:first-child){
+     margin-left: -130px;
+ }
+
+.active{
+transform: translateX(130px);
+box-shadow: -1rem 0 1rem #000;
+transform: translateY(-1rem);
+}
+
+.note .tools {
+    background-color:#17141d;
+    display: flex;
+    flex-direction: column;
+    justify-content: wrap;
+    width: 100%;
+    padding: 0.5rem;
+    border-top-left-radius : 16px;
+    border-top-right-radius: 16px;
+}
+
+.note .NoteHead{
+    margin: 0.5rem;
+}
+
+.NoteHead{
+    background-color: #17141d;
+    border: none;
+    color: white;
+}
+
+
+.note .tools button, .todo button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.note .main {
+    background-color: #eee;
+    overflow: hidden;
+    height: 400px;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    color: gray;
+    padding-left: 1rem;
+}
+
+.note textarea {
+    outline: none;
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    height: 400px;
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    max-width: 400px;
+    border-bottom-left-radius: 16px; 
+    border-bottom-right-radius: 16px;
+}
+
+.note .hidden {
+    display: none;
+}
+
+.add {
+    background-color: #17141d;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
+    
+}
+
+.add:hover{
+    box-shadow: 0 0 1rem #000;
+}
+
+/* --------------------TODOS------------------------------------------ */
+.todos-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    /* min-height: 100vh; */
+    width: 100%;
+}
+
+form {
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    max-width: 100%;
+    width: 100%;
+    border-radius: 16px;
+    background-color:teal ;
+}
+
+.input { 
+    border: none;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    border-radius: 16px;
+    background-color: #17141d;
+    
+   
+}
+
+.input:focus, .NoteHead:focus{
+    border-style: none;
+    outline: none;
+}
+
+
+.input::placeholder {
+    color: #b5b5b5;
+}
+.separator{
+    height: 10px;
+    background-color: teal;
+}
+
+.todos {
+    background-color: teal;
+    padding: 0;
+    /* padding-left: 1rem; */
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+
+}
+.todos-comp{
+    background-color: teal;
+    padding: 0;
+    /* padding-left: 1rem; */
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+}
+
+
+.todos li, .todos-comp li {
+    background-color: #17141d;
+    /* border-top: 1px solid #e5e5e5; */
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid teal;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.todos li:last-child , .todos-comp li:last-child{
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+.todos li:first-child, .todos-comp li:first-child{
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+}
+
+.todos li.completed, .todos-comp li.completed {
+    color: #b6b6b6;
+    text-decoration: line-through;
+}
+
+ .todo:hover~.todo{
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+
+ .todo:hover{
+    box-shadow: -1rem 1rem 1rem #000;
+    transform: translateX(1rem);
+    border-radius: 16px;
+    transition: transform 0.5s ease;
+ }
+
+ .todos:not(:first-child){
+     margin-bottom: -20px;
+ }
+
+ .todo button{
+     margin: 5px;
+ }
+
+ /* --------------------Completed------------------------------------------ */
+
+ .completedSection{
+     margin-top: 2rem;
+ }
+/* --------------------MEDIA------------------------------------------ */
+
+ @media only screen and (max-device-width: 600px){
+
+    .notes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+        /* overflow-x: scroll; */
+    }
+    
+    
+    .note {
+        height: 400px;
+        width: 300px;
+        min-width: 250px;
+        padding: 0.25rem;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    .note:focus-within~.note, .note:hover~.note{
+        transform: translateX(0);
+    }
+    
+    
+     .note:hover, .note:active{
+        box-shadow: -1rem 0 1rem #000;
+        transform: translateY(0);
+     }
+    
+    
+     .note:not(:first-child){
+         margin-left: 0;
+     }
+     .todo:hover~.todo{
+        transform: translateY(0);
+        transition: transform 0.3s ease;
+    }
+    
+    
+     .todo:hover, .todo:active{
+        transform: translateX(0);
+        border-radius: 16px;
+
+     }
+    
+   
+    
+ }
